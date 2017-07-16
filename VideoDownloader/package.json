@@ -1,0 +1,38 @@
+{
+  "name": "VideoDownloader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && webpack --config config/webpack.development.js --bail",
+    "prestart": "yarn run build",
+    "start-server": "webpack-dev-server --inline --progress --open",
+    "build:watch": "tsc -p src/ -w",
+    "build:upgrade": "tsc",
+    "build:babel": "babel src -d src --extensions \".es6\" --source-maps",
+    "copy-dist-files": "node ./copy-dist-files.js"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.2.8",
+    "@types/node": "^8.0.13",
+    "awesome-typescript-loader": "^3.2.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.18.2",
+    "to-string-loader": "^1.1.5",
+    "typescript": "^2.4.1",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "zone.js": "^0.8.13"
+  }
+}
